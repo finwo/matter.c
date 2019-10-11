@@ -42,11 +42,11 @@
 
 #define INT_MIN		(-1 - INT_MAX)
 #define INT_MAX		(__INT_MAX__)
-#define UINT_MAX	(INT_MAX * 2u + 1)
+#define UINT_MAX	(INT_MAX * 2U + 1)
 
-#define LONG_MIN	(-1l - LONG_MAX)
+#define LONG_MIN	(-1L - LONG_MAX)
 #define LONG_MAX	(__LONG_MAX__)
-#define ULONG_MAX	(LONG_MAX * 2ul + 1)
+#define ULONG_MAX	(LONG_MAX * 2UL + 1)
 
 #define LLONG_MAX	0x7fffffffffffffffLL
 #define LLONG_MIN	(-1LL - LLONG_MAX)
