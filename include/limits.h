@@ -12,9 +12,9 @@
 #endif
 #ifndef __LONG_MAX__
 #if __WORDSIZE == 64
-#define __LONG_MAX__    0x7fffffffffffffffl
+#define __LONG_MAX__    0x7fffffffffffffffL
 #else
-#define __LONG_MAX__    0x7fffffffl
+#define __LONG_MAX__    0x7fffffffL
 #endif
 #endif
 
@@ -48,11 +48,11 @@
 #define LONG_MAX	(__LONG_MAX__)
 #define ULONG_MAX	(LONG_MAX * 2ul + 1)
 
-#define LLONG_MAX	0x7fffffffffffffffll
-#define LLONG_MIN	(-1ll - LLONG_MAX)
+#define LLONG_MAX	0x7fffffffffffffffLL
+#define LLONG_MIN	(-1LL - LLONG_MAX)
 
 /* Maximum value an `unsigned long long int' can hold.  (Minimum is 0.)  */
-#define ULLONG_MAX (~0ull)
+#define ULLONG_MAX (~0ULL)
 
 #define SSIZE_MIN LONG_MIN
 #define SSIZE_MAX LONG_MAX
@@ -76,7 +76,6 @@
 
 #define LINE_MAX	2048
 
-/* mutt demanded these */
 #define _POSIX_PATH_MAX PATH_MAX
 #define MB_LEN_MAX 16
 
