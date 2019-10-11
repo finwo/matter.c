@@ -27,7 +27,7 @@
 /* (u)int32_t */
 #if (ULONG_MAX == 0xffffffffUL)
   typedef unsigned long uint32_t;
-  typedef signed   long int32_t
+  typedef signed   long int32_t;
 #elif (UINT_MAX == 0xffffffffUL)
   typedef unsigned int uint32_t;
   typedef signed   int int32_t;
