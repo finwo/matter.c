@@ -6,8 +6,8 @@ LD = wasm-ld
 TARGET ?= wasm32
 CFLAGS ?= -O3
 
-matter.a: $(OBJ)
-	ar rcs matter.a $(OBJ)
+libmatter.a: $(OBJ)
+	ar rcs libmatter.a $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) --target=$(TARGET) -nostdinc -fno-builtin -Iinclude -c $< -o $@
