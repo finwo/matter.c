@@ -2,7 +2,7 @@
 CC = clang
 LD = wasm-ld
 TARGET ?= wasm32
-CFLAGS ?= -O3
+CFLAGS ?= -Os
 
 SRC=$(shell find -L src/$(TARGET) -type f -name *.c)
 OBJ=$(SRC:.c=.o)
