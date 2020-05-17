@@ -1,7 +1,7 @@
 
 TARGET ?= wasm32
 
-SRC=$(shell find -L src/$(TARGET) -type f -name *.c)
+SRC=$(shell find -L src/arch/$(TARGET) -type f -name *.c)
 OBJ=$(SRC:.c=.o)
 
 libmatter.a: $(OBJ)
