@@ -1,11 +1,17 @@
 
 TARGET ?= wasm32
 
+AR_wasm=llvm-ar
+AR_wasm32=${AR_wasm}
+AR_wasm64=${AR_wasm}
+
+AR=${AR_${TARGET}}
+
 SRC=$(shell find -L src/arch/$(TARGET) -type f -name *.c)
 OBJ=$(SRC:.c=.o)
 
 libmatter.a: $(OBJ)
-	ar -cvq libmatter.a $(OBJ)
+	$(AR) -cvq libmatter.a $(OBJ)
 
 %.o: %.c
 	clang -Os -S -emit-llvm $(CFLAGS) --target=$(TARGET) -nostdinc -fno-builtin -Iinclude -c $< -o $(@:.o=.ll)
