@@ -3,6 +3,7 @@
 
 #include <malloc.h>
 #include <stddef.h>
+#include <string.h>
 
 extern unsigned char __heap_base;
 
@@ -16,7 +17,7 @@ unsigned int hsize      = (2 * sizeof(unsigned int));
 // TODO: realloc
 // TODO: free
 
-void * malloc(int n) {
+void * malloc(size_t n) {
   unsigned char *r     = heap_start;
 
   unsigned int *size = NULL;
@@ -61,6 +62,44 @@ void * malloc(int n) {
 void free(void *p) {
   unsigned int *used = p - isize;
   *used = 0;
+}
+
+void *calloc(size_t num, size_t nsize)
+{
+  size_t size;
+  void *block;
+  if (!num || !nsize)
+    return NULL;
+  size = num * nsize;
+  /* check mul overflow */
+  if (nsize != size / num)
+    return NULL;
+  block = malloc(size);
+  if (!block)
+    return NULL;
+  memset(block, 0, size);
+  return block;
+}
+
+void *realloc(void *block, size_t size)
+{
+  void *ret;
+  size_t original_size = (size_t)(((char*)block) - hsize);
+
+  if (!block || !size)
+    return malloc(size);
+
+  if (size <= (size_t)(((char*)block) - hsize)) {
+    return block;
+  }
+
+  ret = malloc(size);
+  if (ret) {
+    memcpy(ret, block, original_size);
+    free(block);
+  }
+
+  return ret;
 }
 
 #endif // _MALLOC_C_
