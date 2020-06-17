@@ -11,7 +11,7 @@ libmatter.a: $(OBJ)
 	$(AR) -cvq $@ $(OBJ)
 
 %.o: %.c
-	$(LLE) -Ofast -S $(CFLAGS) -nostdinc -fno-builtin -Iinclude -Iarch/$(TARGET)/include -c $< -o $(@:.o=.ll)
+	$(LLE) -Ofast -S $(CFLAGS) -nostdinc -fno-builtin -Iarch/$(TARGET)/include -Iinclude -c $< -o $(@:.o=.ll)
 	$(LLC) -filetype=obj -O3 $(@:.o=.ll)
 
 .PHONY: clean

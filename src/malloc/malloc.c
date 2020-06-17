@@ -1,5 +1,5 @@
-#ifndef _MALLOC_C_
-#define _MALLOC_C_
+#ifndef _MALLOC_MALLOC_C_
+#define _MALLOC_MALLOC_C_
 
 #include <malloc.h>
 #include <string.h>
@@ -122,4 +122,4 @@ void *calloc(size_t nelem, size_t elsize) {
   return ptr;
 }
 
-#endif // _MALLOC_C_
+#endif // _MALLOC_MALLOC_C_
