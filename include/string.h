@@ -6,5 +6,6 @@
 int memcmp (const void *str1, const void *str2, int count);
 void *memcpy (void *dest, const void *src, size_t len);
 void *memset (void *dest, int val, size_t len);
+static unsigned int strlen(const char *s);
 
 #endif // _STRING_H_
