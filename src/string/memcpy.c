@@ -1,5 +1,5 @@
-#ifndef _MEMCPY_C_
-#define _MEMCPY_C_
+#ifndef _STRING_MEMCPY_C_
+#define _STRING_MEMCPY_C_
 
 #include <string.h>
 
@@ -12,4 +12,4 @@ void * memcpy (void *dest, const void *src, size_t len) {
   return dest;
 }
 
-#endif // _MEMCPY_C_
+#endif // _STRING_MEMCPY_C_

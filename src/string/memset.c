@@ -1,5 +1,5 @@
-#ifndef _MEMSET_C_
-#define _MEMSET_C_
+#ifndef _STRING_MEMSET_C_
+#define _STRING_MEMSET_C_
 
 #include <string.h>
 
@@ -10,4 +10,4 @@ void * memset (void *dest, int val, size_t len) {
   return dest;
 }
 
-#endif // _MEMSET_C_
+#endif // _STRING_MEMSET_C_
