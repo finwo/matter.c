@@ -17,6 +17,9 @@ libmatter.a: $(OBJ)
 	rm -f $@
 	$(AR) -cvq $@ $(OBJ)
 
+libmatter.so: $(OBJ)
+	$(CC) -fPIC --shared $(CFLAGS) $(INCLUDES) -o $@ $(SRC)
+
 %.o: %.c
 	$(LLE) -Ofast -S $(CFLAGS) $(INCLUDES) -c $< -o $(@:.o=.ll)
 	$(LLC) -filetype=obj -O3 $(@:.o=.ll)
