@@ -11,7 +11,7 @@ INCLUDES+=-Iarch/$(TARGET)/include
 INCLUDES+=-Iinclude
 
 CFLAGS?=
-CFLAGS+=-nostdinc -Wl,--allow-undefined
+CFLAGS+=-nostdinc
 
 libmatter.a: $(OBJ)
 	rm -f $@
