@@ -16,7 +16,7 @@ int brk(void *addr) {
 
 void * sbrk(ssize_t increment) {
   size_t current_pages = __builtin_wasm_memory_size(0);
-  void   *heap_limit   = current_pages * PAGE_SIZE;
+  void   *heap_limit   = (void *)(current_pages * (size_t)PAGE_SIZE);
 
   void *ret = break_pointer;
   break_pointer += increment;
