@@ -1,6 +1,3 @@
-#ifndef _STRING_MEMCMP_C_
-#define _STRING_MEMCMP_C_
-
 #include <string.h>
 
 int memcmp (const void *str1, const void *str2, int count) {
@@ -15,5 +12,3 @@ int memcmp (const void *str1, const void *str2, int count) {
 
   return 0;
 }
-
-#endif // _STRING_MEMCMP_C_

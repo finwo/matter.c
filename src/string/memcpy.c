@@ -1,6 +1,3 @@
-#ifndef _STRING_MEMCPY_C_
-#define _STRING_MEMCPY_C_
-
 #include <string.h>
 
 void * memcpy (void *dest, const void *src, size_t len) {
@@ -11,5 +8,3 @@ void * memcpy (void *dest, const void *src, size_t len) {
   }
   return dest;
 }
-
-#endif // _STRING_MEMCPY_C_

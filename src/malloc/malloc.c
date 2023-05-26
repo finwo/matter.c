@@ -1,6 +1,3 @@
-#ifndef _MALLOC_MALLOC_C_
-#define _MALLOC_MALLOC_C_
-
 #include <malloc.h>
 #include <string.h>
 #include <unistd.h>
@@ -121,5 +118,3 @@ void *calloc(size_t nelem, size_t elsize) {
   memset(ptr, 0, size);
   return ptr;
 }
-
-#endif // _MALLOC_MALLOC_C_
