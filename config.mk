@@ -1,1 +1,2 @@
-SRC+=__DIRNAME/libmatter.a
+override CFLAGS+=-nostdinc -fno-builtin
+SRC+=$(wildcard __DIRNAME/src/*/*.c)

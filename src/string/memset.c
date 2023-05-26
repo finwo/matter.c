@@ -1,6 +1,3 @@
-#ifndef _STRING_MEMSET_C_
-#define _STRING_MEMSET_C_
-
 #include <string.h>
 
 void * memset (void *dest, int val, size_t len) {
@@ -9,5 +6,3 @@ void * memset (void *dest, int val, size_t len) {
     *ptr++ = val;
   return dest;
 }
-
-#endif // _STRING_MEMSET_C_
